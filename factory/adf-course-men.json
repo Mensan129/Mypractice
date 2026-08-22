@@ -1,0 +1,15 @@
+{
+	"name": "adf-course-men",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "368e81a5-a35e-47b8-ac28-1cab13ab8da6",
+		"tenantId": "64f529ab-688a-4732-92a6-24806130f4d9"
+	}
+}
