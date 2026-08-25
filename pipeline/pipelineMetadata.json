@@ -20,10 +20,11 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"exists"
+						"lastModified"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -45,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Get Metadata').output.exists",
+						"value": "@greaterOrEquals(\n  subtractFromTime(utcNow(), 1, 'Hour'),\n  activity('Get Metadata').output.lastModified\n  )",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
